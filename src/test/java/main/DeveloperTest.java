@@ -15,9 +15,9 @@ public class DeveloperTest {
 	@Test
 	public void test() {
 		Developer developer = new Developer("Michel");
+		developer.setPosition(new Position("18"));
 		Assert.assertEquals("Michel", developer.getName());
-		developer.setLocation(new Location("18"));
-		Assert.assertEquals("18", developer.getLocation().getName());
+		Assert.assertEquals("18", developer.getPosition().getName());
 	}
 
 }

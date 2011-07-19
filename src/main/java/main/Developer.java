@@ -3,7 +3,7 @@ package main;
 public class Developer {
 	
 	private String name;
-	private Location location;
+	private Position position;
 
 	public Developer(String name) {
 		this.name = name;
@@ -13,12 +13,12 @@ public class Developer {
 		return name;
 	}
 
-	public void setLocation(Location location) {
-		this.location = location;
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 
-	public Location getLocation() {
-		return location;
+	public Position getPosition() {
+		return position;
 	}
 
 }
