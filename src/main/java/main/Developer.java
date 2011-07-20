@@ -1,9 +1,13 @@
 package main;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Developer {
 	
 	private String name;
 	private Position position;
+	private Date date;
 
 	public Developer(String name) {
 		this.name = name;
@@ -15,10 +19,15 @@ public class Developer {
 
 	public void setPosition(Position position) {
 		this.position = position;
+		this.date = Calendar.getInstance().getTime();
 	}
 
 	public Position getPosition() {
 		return position;
+	}
+
+	public Date lastTimeMoved() {
+		return date;
 	}
 
 }
