@@ -30,6 +30,10 @@ public class Position {
 		return this.getName().hashCode();
 	}
 	
+	@Override
+	public String toString() {
+		return name; 
+	}
 	
 
 }

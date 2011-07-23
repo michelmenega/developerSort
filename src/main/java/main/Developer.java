@@ -29,5 +29,9 @@ public class Developer {
 	public Date lastTimeMoved() {
 		return date;
 	}
-
+	
+	@Override
+	public String toString() {
+		return name; 
+	}
 }
