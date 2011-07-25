@@ -1,0 +1,7 @@
+*.class
+*.jar
+*.prefs
+Icon?
+Thumbs.db
+.project
+.classpath
