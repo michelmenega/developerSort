@@ -8,10 +8,10 @@ public class GenericMemoryDAO<T> {
 	private ArrayList<T> data = new ArrayList<T>(0);
 
 	public void add(T t) {
-		if (has(t) != null) {
+		if (has(t) != null)
 			remove(t);
-		}
-		data.add(t);
+		if (t != null)
+			data.add(t);
 	}
 
 	public void remove(T t) {
@@ -20,11 +20,9 @@ public class GenericMemoryDAO<T> {
 
 	private Object has(T t) {
 		Integer index = data.indexOf(t);
-		if (index >= 0) {
-			return data.get(index.intValue());
-		} else {
-			return null;
-		}
+		return index >= 0 ?
+				data.get(index.intValue()) :
+				null;
 	}
 
 	@SuppressWarnings("unchecked")
