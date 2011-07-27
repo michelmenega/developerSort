@@ -31,5 +31,19 @@ public class GenericMemoryDAO<T> {
 	public Collection<T> list() {
 		return (Collection<T>) data.clone();
 	}
+	
+	// TODO Forcar T a implementar uma interface q contenha String name
+	// public void add(String name) {
+	// T t = new T(name);
+	// if (has(t) != null)
+	// remove(t);
+	// if(t != null)
+	// data.add(t);
+	// }
+	//
+	// public void remove(String name) {
+	// T t = new T(name);
+	// data.remove(t);
+	// }
 
 }
