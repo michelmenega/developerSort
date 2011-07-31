@@ -3,11 +3,9 @@
  */
 package main;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.util.Calendar;
-import java.util.Date;
-
+import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,13 +28,10 @@ public class DeveloperTest {
 		Developer developer = new Developer("Nathan");
 		developer.setPosition(new Position("1"));
 		
-		Calendar calendarTest = Calendar.getInstance();
-		calendarTest.setTime(new Date());
+		DateTime dateTimeTest = new DateTime();
+		DateTime developerDateTime = developer.getLastTimeMoved();
 		
-		Calendar developerCalendar = Calendar.getInstance();
-		developerCalendar.setTime(developer.getLastTimeMoved());
-		
-		assertEquals(calendarTest.get(Calendar.DAY_OF_MONTH), developerCalendar.get(Calendar.DAY_OF_MONTH));
+		assertEquals(0,dateTimeTest.toLocalDate().compareTo(developerDateTime.toLocalDate()));
 	}
 	
 	@Test

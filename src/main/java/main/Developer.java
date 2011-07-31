@@ -1,13 +1,12 @@
 package main;
 
-import java.util.Calendar;
-import java.util.Date;
+import org.joda.time.DateTime;
 
 public class Developer implements Comparable<Developer> {
 	
 	private String name;
 	private Position position;
-	private Date lastTimeMoved;
+	private DateTime lastTimeMoved;
 
 	public Developer(String name) {
 		this.name = name;
@@ -19,14 +18,14 @@ public class Developer implements Comparable<Developer> {
 
 	public void setPosition(Position position) {
 		this.position = position;
-		this.lastTimeMoved = Calendar.getInstance().getTime();
+		this.lastTimeMoved = new DateTime();
 	}
 
 	public Position getPosition() {
 		return position;
 	}
 
-	public Date getLastTimeMoved() {
+	public DateTime getLastTimeMoved() {
 		return lastTimeMoved;
 	}
 	
