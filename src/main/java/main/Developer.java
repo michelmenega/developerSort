@@ -29,5 +29,19 @@ public class Developer {
 	public Date lastTimeMoved() {
 		return date;
 	}
-
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.getName().equals(((Developer) obj).getName());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getName().hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return name; 
+	}
 }
