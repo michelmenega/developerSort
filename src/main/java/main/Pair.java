@@ -11,7 +11,9 @@ public class Pair{
 	}
 
 	public Developer getEligibleToMove() {
-		return null;
+		if(getDeveloperA().getLastTimeMoved().toLocalDate().compareTo(getDeveloperB().getLastTimeMoved().toLocalDate()) >= 0)
+			return getDeveloperA();
+		return getDeveloperB();
 	}
 	
 	public Developer getDeveloperA() {
