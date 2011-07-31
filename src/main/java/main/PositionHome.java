@@ -6,7 +6,7 @@ public class PositionHome {
 
 	private final static ArrayList<Position> availablePosition = new ArrayList<Position>();  
 	
-	public static Position searchPositionName(String name){
+	public static Position searchPosition(String name){
 		for(Position p: availablePosition){
 			if(p.getName().equals(name)) return p;
 		}

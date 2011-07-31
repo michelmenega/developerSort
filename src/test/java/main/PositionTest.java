@@ -10,7 +10,7 @@ public class PositionTest {
 	public void testAddLocation() {
 		Position location = new Position("18");
 		PositionHome.add(location);
-		assertEquals("18", Position.searchBy("18").getName());
+		assertEquals("18", PositionHome.searchPosition("18").getName());
 	}
 	
 	@Test

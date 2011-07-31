@@ -34,9 +34,22 @@ public class DeveloperTest {
 		calendarTest.setTime(new Date());
 		
 		Calendar developerCalendar = Calendar.getInstance();
-		developerCalendar.setTime(developer.lastTimeMoved());
+		developerCalendar.setTime(developer.getLastTimeMoved());
 		
 		assertEquals(calendarTest.get(Calendar.DAY_OF_MONTH), developerCalendar.get(Calendar.DAY_OF_MONTH));
+	}
+	
+	@Test
+	public void testSearchDeveloperByPosition(){
+		DeveloperHome.add(new Developer("Nathan Ferracini"));
+		DeveloperHome.add(new Developer("Michel Menegazzo"));
+		PositionHome.add(new Position("1"));
+		PositionSort.setUp();
+		
+		Pair pair = DeveloperHome.searchDeveloperBy(PositionHome.searchPosition("1"));
+		
+		assertEquals(DeveloperHome.searchDeveloperBy("Michel Menegazzo"), pair.getDeveloperA());
+		assertEquals(DeveloperHome.searchDeveloperBy("Nathan Ferracini"), pair.getDeveloperB());
 	}
 	
 }

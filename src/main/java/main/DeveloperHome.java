@@ -1,6 +1,8 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class DeveloperHome {
 
@@ -11,6 +13,18 @@ public class DeveloperHome {
 			if(p.getName().equals(name)) return p;
 		}
 		return null;
+	}
+	
+	public static Pair searchDeveloperBy(Position position){
+		ArrayList<Developer> developerInPosition = new ArrayList<Developer>();
+		
+		for(Developer p: developers){
+			if(p.getPosition().equals(position)) developerInPosition.add(p);
+		}
+		
+		Collections.sort(developerInPosition);
+		return new Pair(developerInPosition.get(0),developerInPosition.get(1));
+		
 	}
 	
 	public static void add(Developer developer){

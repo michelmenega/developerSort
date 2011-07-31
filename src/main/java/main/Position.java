@@ -16,10 +16,6 @@ public class Position {
 		this.name = name;
 	}
 
-	public static Position searchBy(String name) {
-		return PositionHome.searchPositionName(name);
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		return this.getName().equals(((Position) obj).getName());
