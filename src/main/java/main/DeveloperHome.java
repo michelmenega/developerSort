@@ -5,10 +5,10 @@ import java.util.Collections;
 
 public class DeveloperHome {
 
-	private final static ArrayList<Developer> developers = new ArrayList<Developer>();  
+	private final static GenericMemoryDAO<Developer> developers = new GenericMemoryDAO<Developer>();  
 	
 	public static Developer searchDeveloperBy(String name){
-		for(Developer p: developers){
+		for(Developer p: developers.list()){
 			if(p.getName().equals(name)) return p;
 		}
 		return null;
@@ -17,7 +17,7 @@ public class DeveloperHome {
 	public static Pair searchDeveloperBy(Position position){
 		ArrayList<Developer> developerInPosition = new ArrayList<Developer>();
 		
-		for(Developer p: developers){
+		for(Developer p: developers.list()){
 			if(p.getPosition().equals(position)) developerInPosition.add(p);
 		}
 		
@@ -31,6 +31,6 @@ public class DeveloperHome {
 	}
 	
 	public static ArrayList<Developer> getAll(){
-		return developers;
+		return (ArrayList<Developer>) developers.list();
 	}
 }

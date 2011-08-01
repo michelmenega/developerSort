@@ -5,7 +5,6 @@ import java.util.Iterator;
 
 public class PositionSort {
 
-
 	public static void setUp() {
 		ArrayList<Developer> developers = DeveloperHome.getAll();
 		ArrayList<Position> positions = PositionHome.getAll();
@@ -15,14 +14,13 @@ public class PositionSort {
 	
 	public static ArrayList<Developer> eligibleDevelopersToMove(){
 		
-		ArrayList<Position> positions = PositionHome.getAll();
-		Pair pair;
+		ArrayList<Position> positions = (ArrayList<Position>) PositionHome.getAll();
 		ArrayList<Developer> developers = new ArrayList<Developer>();
 		
 		
 		Iterator<Position> positionIterator = positions.iterator();
 		while(positionIterator.hasNext()){
-			pair = DeveloperHome.searchDeveloperBy(positionIterator.next());
+			Pair pair = DeveloperHome.searchDeveloperBy(positionIterator.next());
 			developers.add(pair.getEligibleToMove());
 		}
 		
